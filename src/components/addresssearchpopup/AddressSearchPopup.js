@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { View, TextInput, Button, Modal, FlatList } from "react-native";
 import { styles } from "./AddressSearchStyle";
-import { MAPS_API_KEY } from "../../constants";
 import axios from "axios";
 import { fetchPredictions } from "../../services/ApiService";
 import { fetchPlaceDetails } from "../../services/ApiService";

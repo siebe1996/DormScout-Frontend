@@ -4,7 +4,6 @@ import { useNavigation, useFocusEffect } from "@react-navigation/native";
 import MapView, { Marker } from "react-native-maps";
 import * as Location from "expo-location";
 import { HomeStyles } from "./HomeStyle";
-import { MAPBOX_ACCESS_TOKEN, MAPS_API_KEY } from "../../constants";
 import AddressSearchPopup from "../../components/addresssearchpopup/AddressSearchPopup";
 import reviewData from "../../data/json/review";
 import ClaimPlacePopup from "../../components/claimplacepopup/ClaimPlacePopup";

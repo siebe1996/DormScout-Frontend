@@ -1,7 +1,6 @@
 // ApiService.js
 import axios from "axios";
 import { BACKEND_API } from "../constants";
-import { MAPS_API_KEY } from "../constants";
 import { useAuth } from "../contexts/AuthContext";
 import { jwtDecode } from "jwt-decode";
 
@@ -265,7 +264,7 @@ export const CheckTokenExp = async (token) => {
 export const fetchPredictions = async (address) => {
     try {
         const response = await axios.get(
-            `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${address}&key=${MAPS_API_KEY}`
+            `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${address}&key=${process.env.EXPO_PUBLIC_MAPS_API_KEY}`
         );
         return response.data;
     } catch (error) {
@@ -276,7 +275,7 @@ export const fetchPredictions = async (address) => {
 export const fetchPlaceDetails = async (placeId) => {
     try {
         const response = await axios.get(
-            `https://maps.googleapis.com/maps/api/place/details/json?placeid=${placeId}&key=${MAPS_API_KEY}`
+            `https://maps.googleapis.com/maps/api/place/details/json?placeid=${placeId}&key=${process.env.EXPO_PUBLIC_MAPS_API_KEY}`
         );
         return response.data.result;
     } catch (error) {
@@ -288,7 +287,7 @@ export const fetchPlaceDetails = async (placeId) => {
 export const fetchLocationDetails = async (latitude, longitude) => {
     try {
         const response = await axios.get(
-            `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${MAPS_API_KEY}`
+            `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${process.env.EXPO_PUBLIC_MAPS_API_KEY}`
         );
         const addressComponents = response.data.results[0].address_components;
 
