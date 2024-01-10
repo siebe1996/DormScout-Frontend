@@ -25,6 +25,15 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "@stripe/stripe-react-native",
+        {
+          "merchantIdentifier": "string | string [] // dit werkt niet moet vervangen worden https://stripe.com/docs/apple-pay?platform=react-native",
+          "enableGooglePay": false
+        }
+      ]
+    ]
   }
 }
