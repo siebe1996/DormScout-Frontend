@@ -306,7 +306,7 @@ export const fetchLocationDetails = async (latitude, longitude) => {
 export const fetchAddressInfo = async (address) => {
     try {
         const response = await axios.get(
-            `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${MAPS_API_KEY}`
+            `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${process.env.EXPO_PUBLIC_MAPS_API_KEY}`
         );
         return response.data;
     } catch (error) {

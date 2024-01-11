@@ -7,6 +7,7 @@ import {
     TouchableOpacity,
     Text,
     Image,
+    TextInput,
 } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 import CostumTextInputLabelComp from "../../components/costumtextinputlabelcomp/CostumTextInputLabelComp";
@@ -148,6 +149,10 @@ const RegisterScreen = () => {
         setShowDatePicker(true);
     };
 
+    const closeDatePicker = () => {
+        setShowDatePicker(false);
+    };
+
     const validateForm = () => {
         const newErrors = {};
 
@@ -175,8 +180,8 @@ const RegisterScreen = () => {
             newErrors.phoneNumber = "Phone number is required";
         }
 
-        if (new Date(date) < new Date()) {
-            newErrors.date = "The date must be after today";
+        if (new Date(date) > new Date()) {
+            newErrors.date = "The date must be your real birthday";
         }
 
         if (!password1.trim() || password1 != password2) {
@@ -302,17 +307,24 @@ const RegisterScreen = () => {
                         </TouchableOpacity>
                     </View>
                     {showDatePicker && (
-                        <DateTimePicker
-                            value={date}
-                            mode="date"
-                            display={
-                                Platform.OS === "ios" ? "spinner" : "default"
-                            }
-                            is24Hour={true}
-                            onChange={(event, date) =>
-                                handleDateChange(event, date)
-                            }
-                        />
+                        <View>
+                            <DateTimePicker
+                                value={date}
+                                mode="date"
+                                display={
+                                    Platform.OS === "ios"
+                                        ? "spinner"
+                                        : "default"
+                                }
+                                is24Hour={true}
+                                onChange={(event, date) =>
+                                    handleDateChange(event, date)
+                                }
+                            />
+                            <TouchableOpacity onPress={() => closeDatePicker()}>
+                                <Text>Close</Text>
+                            </TouchableOpacity>
+                        </View>
                     )}
                 </View>
                 {errors.date && <InvalidTextField text={errors.date} />}

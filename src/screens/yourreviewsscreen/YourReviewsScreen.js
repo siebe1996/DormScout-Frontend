@@ -6,12 +6,14 @@ import {
     TouchableOpacity,
     Image,
     ScrollView,
+    Alert,
 } from "react-native";
 import YourReviewCardComp from "../../components/yourreviewcardcomp/YourReviewCardComp";
 import reviewData from "../../data/json/review";
 import { useNavigation, useFocusEffect } from "@react-navigation/native";
 import { useAuth } from "../../contexts/AuthContext";
 import { fetchPlacesReviewer } from "../../services/ApiService";
+import { showAlertOffline } from "../../services/HelperFunctions";
 
 const YourReviewsScreen = () => {
     const { state } = useAuth();
@@ -34,8 +36,16 @@ const YourReviewsScreen = () => {
         } catch (error) {
             console.error("Error: " + error.message);
             setLoading(false);
+            showAlertOffline();
         }
     };
+
+    /*const showAlertOffline = () => {
+        Alert.alert(
+            "You are offline",
+            "If you are offline you're not able to edit, and data present might not be accurate"
+        );
+    };*/
 
     const claimedNotFinishedPlaces = places.filter(
         (item) => item.reviewId === null
@@ -43,6 +53,10 @@ const YourReviewsScreen = () => {
     const claimedAndFinishedPlaces = places.filter(
         (item) => item.reviewId !== null
     );
+
+    const showAlert = () => {
+        Alert.alert("Already gave review", "You can't edit a review");
+    };
 
     if (loading) {
         return (
@@ -78,7 +92,11 @@ const YourReviewsScreen = () => {
                 {claimedAndFinishedPlaces &&
                 claimedAndFinishedPlaces.length > 0 ? (
                     claimedAndFinishedPlaces.map((item) => (
-                        <YourReviewCardComp key={item.id} item={item} />
+                        <YourReviewCardComp
+                            key={item.id}
+                            item={item}
+                            onPress={() => showAlert()}
+                        />
                     ))
                 ) : (
                     <Text>No data available</Text>

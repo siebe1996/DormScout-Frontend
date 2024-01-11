@@ -30,7 +30,10 @@ const YourReviewCardComp = ({ item, onPress }) => {
                 </View>
                 <View style={styles.textContainer}>
                     <Text style={styles.addressText}>{item.address}</Text>
-                    <Text style={styles.dateText}>{item.chosenDate}</Text>
+                    <Text style={styles.dateText}>
+                        {new Date(item.chosenDate).toLocaleDateString()}{" "}
+                        {new Date(item.chosenDate).toLocaleTimeString()}
+                    </Text>
                 </View>
             </TouchableOpacity>
         </View>

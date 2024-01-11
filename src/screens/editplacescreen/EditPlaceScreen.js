@@ -41,9 +41,13 @@ const EditPlaceScreen = ({ route }) => {
     const [link, setLink] = useState(unclaimedReview.link);
     const [showDatePicker, setShowDatePicker] = useState(false);
     const [showTimePicker, setShowTimePicker] = useState(false);
+    console.log("unclaimedReview.dates", unclaimedReview.dates);
     const [dates, setDates] = useState(
-        unclaimedReview.dates.map((dateObj) => new Date(dateObj.date))
+        unclaimedReview.dates.map((dateObj) => ({
+            date: new Date(dateObj.date),
+        }))
     );
+    //toDo make sure objects are preserved
     const [notes, setNotes] = useState(unclaimedReview.notes);
     const [selectedDateIndex, setSelectedDateIndex] = useState(null);
     const [errors, setErrors] = useState({});
@@ -59,6 +63,7 @@ const EditPlaceScreen = ({ route }) => {
     const [popupImageData, setPopupImageData] = useState(null);
     const [selectedImages, setSelectedImages] = useState([]);
     const navigation = useNavigation();
+    console.log("dates", dates);
 
     useEffect(() => {
         //convertValues();
@@ -137,9 +142,8 @@ const EditPlaceScreen = ({ route }) => {
 
         if (date) {
             const updatedDates = [...dates];
-            updatedDates[index] = date;
+            updatedDates[index].date = date;
             setDates([...updatedDates]);
-            setSelectedDateIndex(null);
         }
     };
 
@@ -154,6 +158,14 @@ const EditPlaceScreen = ({ route }) => {
         setShowDatePicker(false);
         setShowTimePicker(true);
         setSelectedDateIndex(index);
+    };
+
+    const closeDatePicker = () => {
+        setShowDatePicker(false);
+    };
+
+    const closeTimePicker = () => {
+        setShowTimePicker(false);
     };
 
     const handleAddDate = () => {
@@ -213,7 +225,7 @@ const EditPlaceScreen = ({ route }) => {
             newErrors.dates = "At least one date is required";
         } else {
             const areAllDatesAfterToday = dates.every(
-                (date) => new Date(date) > new Date()
+                (date) => new Date(date.date) > new Date()
             );
 
             if (!areAllDatesAfterToday) {
@@ -242,6 +254,7 @@ const EditPlaceScreen = ({ route }) => {
         );
         const validationErrors = validateForm();
         if (Object.keys(validationErrors).length === 0) {
+            console.log("dates in save", dates);
             const placeData = {
                 address: address,
                 homeownerTelephone: telephoneNumber,
@@ -251,9 +264,7 @@ const EditPlaceScreen = ({ route }) => {
                     latitude: latitude,
                     longitude: longitude,
                 },
-                dates: dates.map((item) => ({
-                    date: item,
-                })),
+                dates: dates,
                 notes: nonEmptyNotes,
                 images: selectedImages,
             };
@@ -356,8 +367,8 @@ const EditPlaceScreen = ({ route }) => {
                                 onPress={() => showDatepicker(index)}
                             >
                                 <Text style={styles.input}>
-                                    {/*console.log("item", item)*/}
-                                    {item.toLocaleDateString()}
+                                    {console.log("item", item)}
+                                    {item.date.toLocaleDateString()}
                                 </Text>
                             </TouchableOpacity>
                         </View>
@@ -366,41 +377,61 @@ const EditPlaceScreen = ({ route }) => {
                                 onPress={() => showTimepicker(index)}
                             >
                                 <Text style={styles.input}>
-                                    {item.toLocaleTimeString()}
+                                    {item.date.toLocaleTimeString()}
                                 </Text>
                             </TouchableOpacity>
                         </View>
-                        <View>
-                            <TouchableOpacity
-                                onPress={() => handleRemoveDate(index)}
-                            >
-                                <Text style={styles.remove}>Remove</Text>
-                            </TouchableOpacity>
-                        </View>
+                        {dates.length > 1 &&
+                            !showTimePicker &&
+                            !showDatePicker && (
+                                <View>
+                                    <TouchableOpacity
+                                        onPress={() => handleRemoveDate(index)}
+                                    >
+                                        <Text style={styles.remove}>
+                                            Remove
+                                        </Text>
+                                    </TouchableOpacity>
+                                </View>
+                            )}
                     </View>
                 ))}
                 {errors.dates && <InvalidTextField text={errors.dates} />}
                 {showDatePicker && (
-                    <DateTimePicker
-                        value={dates[selectedDateIndex]}
-                        mode="date"
-                        display={Platform.OS === "ios" ? "spinner" : "default"}
-                        is24Hour={true}
-                        onChange={(event, date) =>
-                            handleDateChange(event, date, selectedDateIndex)
-                        }
-                    />
+                    <View>
+                        <DateTimePicker
+                            value={dates[selectedDateIndex].date}
+                            mode="date"
+                            display={
+                                Platform.OS === "ios" ? "spinner" : "default"
+                            }
+                            is24Hour={true}
+                            onChange={(event, date) =>
+                                handleDateChange(event, date, selectedDateIndex)
+                            }
+                        />
+                        <TouchableOpacity onPress={() => closeDatePicker()}>
+                            <Text>Close</Text>
+                        </TouchableOpacity>
+                    </View>
                 )}
                 {showTimePicker && (
-                    <DateTimePicker
-                        value={dates[selectedDateIndex]}
-                        mode="time"
-                        display={Platform.OS === "ios" ? "spinner" : "default"}
-                        is24Hour={true}
-                        onChange={(event, date) =>
-                            handleDateChange(event, date, selectedDateIndex)
-                        }
-                    />
+                    <View>
+                        <DateTimePicker
+                            value={dates[selectedDateIndex].date}
+                            mode="time"
+                            display={
+                                Platform.OS === "ios" ? "spinner" : "default"
+                            }
+                            is24Hour={true}
+                            onChange={(event, date) =>
+                                handleDateChange(event, date, selectedDateIndex)
+                            }
+                        />
+                        <TouchableOpacity onPress={() => closeTimePicker()}>
+                            <Text>Close</Text>
+                        </TouchableOpacity>
+                    </View>
                 )}
                 <TouchableOpacity onPress={handleAddDate}>
                     <Text style={styles.add}>Add Date</Text>
@@ -421,13 +452,15 @@ const EditPlaceScreen = ({ route }) => {
                             }}
                             key={index}
                         />
-                        <View>
-                            <TouchableOpacity
-                                onPress={() => handleRemoveNote(index)}
-                            >
-                                <Text style={styles.remove}>Remove</Text>
-                            </TouchableOpacity>
-                        </View>
+                        {notes.length > 1 && (
+                            <View>
+                                <TouchableOpacity
+                                    onPress={() => handleRemoveNote(index)}
+                                >
+                                    <Text style={styles.remove}>Remove</Text>
+                                </TouchableOpacity>
+                            </View>
+                        )}
                     </View>
                 ))}
                 <TouchableOpacity onPress={handleAddNote}>

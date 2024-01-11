@@ -96,8 +96,8 @@ const EditAccountScreen = ({ route }) => {
         if (!userName.trim()) {
             newErrors.userName = "userName is required";
         }
-        if (new Date(date) < new Date()) {
-            newErrors.date = "The date must be after today";
+        if (new Date(date) > new Date()) {
+            newErrors.date = "The date must be a valid birthday";
         }
 
         return newErrors;

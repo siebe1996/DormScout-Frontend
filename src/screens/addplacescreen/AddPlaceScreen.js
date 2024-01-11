@@ -10,6 +10,7 @@ import {
     Button,
     SectionList,
     Image,
+    Modal,
 } from "react-native";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import CostumButtonComp from "../../components/costumbuttoncomp/CostumButtonComp";
@@ -84,6 +85,8 @@ const AddPlaceScreen = () => {
     };
 
     const handleDateChange = (event, date, index) => {
+        console.log("date in handleDateChange", date);
+        console.log("index in handleDateChange", index);
         if (Platform.OS === "android") {
             setShowDatePicker(false);
             setShowTimePicker(false);
@@ -93,7 +96,7 @@ const AddPlaceScreen = () => {
             const updatedDates = [...dates];
             updatedDates[index] = date;
             setDates([...updatedDates]);
-            setSelectedDateIndex(null);
+            //setSelectedDateIndex(null);
         }
     };
 
@@ -109,6 +112,14 @@ const AddPlaceScreen = () => {
         setShowDatePicker(false);
         setShowTimePicker(true);
         setSelectedDateIndex(index);
+    };
+
+    const closeDatePicker = () => {
+        setShowDatePicker(false);
+    };
+
+    const closeTimePicker = () => {
+        setShowTimePicker(false);
     };
 
     const handleAddDate = () => {
@@ -326,37 +337,57 @@ const AddPlaceScreen = () => {
                                 </Text>
                             </TouchableOpacity>
                         </View>
-                        <View>
-                            <TouchableOpacity
-                                onPress={() => handleRemoveDate(index)}
-                            >
-                                <Text style={styles.remove}>Remove</Text>
-                            </TouchableOpacity>
-                        </View>
+                        {dates.length > 1 &&
+                            !showTimePicker &&
+                            !showDatePicker && (
+                                <View>
+                                    <TouchableOpacity
+                                        onPress={() => handleRemoveDate(index)}
+                                    >
+                                        <Text style={styles.remove}>
+                                            Remove
+                                        </Text>
+                                    </TouchableOpacity>
+                                </View>
+                            )}
                     </View>
                 ))}
                 {errors.dates && <InvalidTextField text={errors.dates} />}
                 {showDatePicker && (
-                    <DateTimePicker
-                        value={dates[selectedDateIndex]}
-                        mode="date"
-                        display={Platform.OS === "ios" ? "spinner" : "default"}
-                        is24Hour={true}
-                        onChange={(event, date) =>
-                            handleDateChange(event, date, selectedDateIndex)
-                        }
-                    />
+                    <View>
+                        <DateTimePicker
+                            value={dates[selectedDateIndex]}
+                            mode="date"
+                            display={
+                                Platform.OS === "ios" ? "spinner" : "default"
+                            }
+                            is24Hour={true}
+                            onChange={(event, date) =>
+                                handleDateChange(event, date, selectedDateIndex)
+                            }
+                        />
+                        <TouchableOpacity onPress={() => closeDatePicker()}>
+                            <Text>Close</Text>
+                        </TouchableOpacity>
+                    </View>
                 )}
                 {showTimePicker && (
-                    <DateTimePicker
-                        value={dates[selectedDateIndex]}
-                        mode="time"
-                        display={Platform.OS === "ios" ? "spinner" : "default"}
-                        is24Hour={true}
-                        onChange={(event, date) =>
-                            handleDateChange(event, date, selectedDateIndex)
-                        }
-                    />
+                    <View>
+                        <DateTimePicker
+                            value={dates[selectedDateIndex]}
+                            mode="time"
+                            display={
+                                Platform.OS === "ios" ? "spinner" : "default"
+                            }
+                            is24Hour={true}
+                            onChange={(event, date) =>
+                                handleDateChange(event, date, selectedDateIndex)
+                            }
+                        />
+                        <TouchableOpacity onPress={() => closeTimePicker()}>
+                            <Text>Close</Text>
+                        </TouchableOpacity>
+                    </View>
                 )}
                 <TouchableOpacity onPress={handleAddDate}>
                     <Text style={styles.add}>Add Date</Text>
@@ -376,13 +407,15 @@ const AddPlaceScreen = () => {
                             }}
                             key={index}
                         />
-                        <View>
-                            <TouchableOpacity
-                                onPress={() => handleRemoveNote(index)}
-                            >
-                                <Text style={styles.remove}>Remove</Text>
-                            </TouchableOpacity>
-                        </View>
+                        {notes.length > 1 && (
+                            <View>
+                                <TouchableOpacity
+                                    onPress={() => handleRemoveNote(index)}
+                                >
+                                    <Text style={styles.remove}>Remove</Text>
+                                </TouchableOpacity>
+                            </View>
+                        )}
                     </View>
                 ))}
                 <TouchableOpacity onPress={handleAddNote}>

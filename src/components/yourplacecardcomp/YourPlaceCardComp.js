@@ -34,7 +34,8 @@ const YourPlaceCardComp = ({ item, onPress }) => {
                     {item.dates &&
                         item.dates.map((date, index) => (
                             <Text key={index} style={styles.dateText}>
-                                {date.date}
+                                {new Date(date.date).toLocaleDateString()}{" "}
+                                {new Date(date.date).toLocaleTimeString()}
                             </Text>
                         ))}
                 </View>

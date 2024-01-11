@@ -14,7 +14,8 @@ import {
 import { fetchPlacesNotYours } from "../../services/ApiService";
 import { useAuth } from "../../contexts/AuthContext";
 import { getStorageItemAsync } from "../../services/LocalStorageService";
-
+import { showAlertOffline } from "../../services/HelperFunctions";
+//toDo block app if offline
 const HomeScreen = () => {
     //toDo after quick naviagtion claim reviewscreen and back the images on the popup sometimes still have old images
     const { state } = useAuth();
@@ -102,6 +103,7 @@ const HomeScreen = () => {
             setNearbyPlaces(places);
         } catch (error) {
             console.error("Error fetching nearby places: " + error.message);
+            showAlertOffline();
         }
     };
 

@@ -19,6 +19,7 @@ import { useAuth } from "../../contexts/AuthContext";
 import {
     convertImagesToBase64,
     returnResultImagePicker,
+    getDistanceFromLatLonInKm,
 } from "../../services/HelperFunctions";
 import InvalidTextField from "../../components/invalidtextfield/InvalidTextField";
 import * as Location from "expo-location";
@@ -79,7 +80,7 @@ const WriteReviewScreen = ({ route }) => {
         }
     };
 
-    const getDistanceFromLatLonInKm = (lat1, lon1, lat2, lon2) => {
+    /*const getDistanceFromLatLonInKm = (lat1, lon1, lat2, lon2) => {
         const R = 6371; // Radius of the earth in km
         const dLat = deg2rad(lat2 - lat1); // deg2rad below
         const dLon = deg2rad(lon2 - lon1);
@@ -96,7 +97,7 @@ const WriteReviewScreen = ({ route }) => {
 
     const deg2rad = (deg) => {
         return deg * (Math.PI / 180);
-    };
+    };*/
 
     const openImagePicker = async () => {
         try {

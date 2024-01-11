@@ -16,6 +16,7 @@ import CostumButtonComp from "../../components/costumbuttoncomp/CostumButtonComp
 import { useNavigation, useFocusEffect } from "@react-navigation/native";
 import { fetchPlacesYours } from "../../services/ApiService";
 import { useAuth } from "../../contexts/AuthContext";
+import { showAlertOffline } from "../../services/HelperFunctions";
 
 const YourPlacesScreen = () => {
     const { state } = useAuth();
@@ -43,6 +44,7 @@ const YourPlacesScreen = () => {
         } catch (error) {
             console.error("Error: " + error.message);
             setLoading(false);
+            showAlertOffline();
         }
     };
 
