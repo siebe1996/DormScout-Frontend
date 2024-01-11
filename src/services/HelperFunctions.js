@@ -128,6 +128,6 @@ const deg2rad = (deg) => {
 export const showAlertOffline = () => {
     Alert.alert(
         "You are offline",
-        "If you are offline your not able to edit and data present might not be accurate"
+        "If you are offline you're not able to edit and data present might not be accurate"
     );
 };
