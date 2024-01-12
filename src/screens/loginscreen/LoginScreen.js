@@ -11,6 +11,7 @@ import {
 import { LoginStyle } from "./LoginStyle";
 import { AuthContext } from "../../contexts/AuthContext";
 import { useNavigation } from "@react-navigation/native";
+import CostumButtonComp from "../../components/costumbuttoncomp/CostumButtonComp";
 
 const LoginScreen = () => {
     const [email, setEmail] = React.useState("");
@@ -74,7 +75,6 @@ const LoginScreen = () => {
                 onPress={handleLogin}
                 disabled={loading}
             />
-            <Button title="Login" onPress={handleLogin} />
 
             <View>
                 <Text>or register</Text>
