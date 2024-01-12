@@ -9,6 +9,7 @@ import {
     FlatList,
     Image,
     Button,
+    ActivityIndicator,
 } from "react-native";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import CostumButtonComp from "../../components/costumbuttoncomp/CostumButtonComp";
@@ -63,6 +64,7 @@ const EditPlaceScreen = ({ route }) => {
     const [isPopupVisible, setIsPopupVisible] = useState(false);
     const [popupImageData, setPopupImageData] = useState(null);
     const [selectedImages, setSelectedImages] = useState([]);
+    const [loading, setLoading] = useState(false);
     const navigation = useNavigation();
     console.log("dates", dates);
 
@@ -238,6 +240,7 @@ const EditPlaceScreen = ({ route }) => {
     };
 
     const save = async () => {
+        setLoading(true);
         console.log("selectedImages before base64", selectedImages);
         try {
             await Promise.all(
@@ -284,6 +287,7 @@ const EditPlaceScreen = ({ route }) => {
         } else {
             setErrors(validationErrors);
         }
+        setLoading(false);
     };
 
     return (
@@ -474,6 +478,7 @@ const EditPlaceScreen = ({ route }) => {
                     save();
                 }}
                 text="Edit"
+                disabled={loading}
             />
 
             <ImagePopup

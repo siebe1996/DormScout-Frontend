@@ -8,6 +8,7 @@ import {
     Text,
     Image,
     TextInput,
+    ActivityIndicator,
 } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 import CostumTextInputLabelComp from "../../components/costumtextinputlabelcomp/CostumTextInputLabelComp";
@@ -49,6 +50,7 @@ const RegisterScreen = () => {
     const [predictions, setPredictions] = useState([]);
     const navigation = useNavigation();
     const { signIn } = useContext(AuthContext);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         fetchPredictionsAsync();
@@ -193,6 +195,7 @@ const RegisterScreen = () => {
     };
 
     const save = async () => {
+        setLoading(true);
         console.log("selectedImages before base64", selectedImage);
         let base64Image = null;
         try {
@@ -232,6 +235,7 @@ const RegisterScreen = () => {
         } else {
             setErrors(validationErrors);
         }
+        setLoading(false);
     };
 
     const handleLoginPress = () => {
@@ -402,7 +406,11 @@ const RegisterScreen = () => {
                 {errors.password && <InvalidTextField text={errors.password} />}
             </View>
 
-            <CostumButtonComp onPress={save} text="Register" />
+            <CostumButtonComp
+                onPress={save}
+                text="Register"
+                disabled={loading}
+            />
 
             <View>
                 <Text>or login</Text>

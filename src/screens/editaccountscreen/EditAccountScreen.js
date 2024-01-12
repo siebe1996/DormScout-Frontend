@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, ScrollView, TouchableOpacity, Image } from "react-native";
+import {
+    View,
+    Text,
+    ScrollView,
+    TouchableOpacity,
+    Image,
+    ActivityIndicator,
+} from "react-native";
 import CostumButtonComp from "../../components/costumbuttoncomp/CostumButtonComp";
 import CostumTextInputLabelComp from "../../components/costumtextinputlabelcomp/CostumTextInputLabelComp";
 import CostumLabelComp from "../../components/costumlabelcomp/CostumLabelComp";
@@ -31,6 +38,7 @@ const EditAccountScreen = ({ route }) => {
     const [date, setDate] = useState(new Date(route.params.user.dateOfBirth));
     const [errors, setErrors] = useState({});
     const navigation = useNavigation();
+    const [loading, setLoading] = useState(false);
     /*useFocusEffect(
         React.useCallback(() => {
             getUser();
@@ -104,6 +112,7 @@ const EditAccountScreen = ({ route }) => {
     };
 
     const save = async () => {
+        setLoading(true);
         console.log("selectedImages before base64", selectedImage);
         let base64Image = null;
         try {
@@ -131,6 +140,7 @@ const EditAccountScreen = ({ route }) => {
         } else {
             setErrors(validationErrors);
         }
+        setLoading(false);
     };
 
     const saveChangesLocally = async (userData) => {
@@ -208,6 +218,7 @@ const EditAccountScreen = ({ route }) => {
                     save();
                 }}
                 text="Edit"
+                disabled={loading}
             />
         </ScrollView>
     );

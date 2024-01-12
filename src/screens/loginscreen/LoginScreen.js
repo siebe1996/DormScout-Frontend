@@ -6,6 +6,7 @@ import {
     Button,
     StyleSheet,
     TouchableOpacity,
+    ActivityIndicator,
 } from "react-native";
 import { LoginStyle } from "./LoginStyle";
 import { AuthContext } from "../../contexts/AuthContext";
@@ -14,6 +15,7 @@ import { useNavigation } from "@react-navigation/native";
 const LoginScreen = () => {
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
+    const [loading, setLoading] = useState(false);
     //const setUserIsLoggedIn = route.params.setUserIsLoggedIn;
 
     //const navigation = useNavigation();
@@ -21,17 +23,23 @@ const LoginScreen = () => {
     const navigation = useNavigation();
 
     const handleLogin = async () => {
+        setLoading(true);
         // Add your authentication logic here
         console.log("Logging in with email:", email, "and password:", password);
 
         //const loginSuccess = await login(email, password);
-        const loginSuccess = await signIn(email, password);
+        const loginSuccess = true;
+        try {
+            loginSuccess = await signIn(email, password);
+        } catch (e) {
+            console.log("Something went wrong logging in:", e);
+        }
         console.log("loginSuccess : " + loginSuccess);
 
         if (loginSuccess) {
             // Login successful
             //setUserIsLoggedIn(true); // Assuming you have this state variable in your StackNavigator
-
+            setLoading(false);
             console.log("Login successful");
             /*navigation.navigate("Home", {
             });*/
@@ -61,6 +69,11 @@ const LoginScreen = () => {
                 value={password}
                 onChangeText={setPassword}
             />
+            <CostumButtonComp
+                text="Login"
+                onPress={handleLogin}
+                disabled={loading}
+            />
             <Button title="Login" onPress={handleLogin} />
 
             <View>
@@ -69,6 +82,7 @@ const LoginScreen = () => {
                     <Text> here</Text>
                 </TouchableOpacity>
             </View>
+            {loading && <ActivityIndicator size="large" color="#0000ff" />}
         </View>
     );
 };

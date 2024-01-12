@@ -11,6 +11,7 @@ import {
     SectionList,
     Image,
     Modal,
+    ActivityIndicator,
 } from "react-native";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import CostumButtonComp from "../../components/costumbuttoncomp/CostumButtonComp";
@@ -50,6 +51,7 @@ const AddPlaceScreen = () => {
     const [isPopupVisible, setIsPopupVisible] = useState(false);
     const [popupImageUri, setPopupImageUri] = useState(null);
     const [selectedImages, setSelectedImages] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         fetchPredictionsAsync();
@@ -200,6 +202,7 @@ const AddPlaceScreen = () => {
     };
 
     const save = async () => {
+        setLoading(true);
         let base64ImagesArray;
         convertImagesToBase64(selectedImages);
         try {
@@ -240,6 +243,7 @@ const AddPlaceScreen = () => {
         } else {
             setErrors(validationErrors);
         }
+        setLoading(false);
     };
 
     return (
@@ -422,7 +426,8 @@ const AddPlaceScreen = () => {
                     <Text style={styles.add}>Add Note</Text>
                 </TouchableOpacity>
             </View>
-            <CostumButtonComp onPress={save} text="Submit" />
+            <CostumButtonComp onPress={save} text="Submit" disabled={loading} />
+            {loading && <ActivityIndicator size="large" color="#0000ff" />}
 
             <ImagePopup
                 isVisible={isPopupVisible}
