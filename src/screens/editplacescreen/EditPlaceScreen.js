@@ -44,6 +44,7 @@ const EditPlaceScreen = ({ route }) => {
     console.log("unclaimedReview.dates", unclaimedReview.dates);
     const [dates, setDates] = useState(
         unclaimedReview.dates.map((dateObj) => ({
+            ...dateObj,
             date: new Date(dateObj.date),
         }))
     );
@@ -254,7 +255,7 @@ const EditPlaceScreen = ({ route }) => {
         );
         const validationErrors = validateForm();
         if (Object.keys(validationErrors).length === 0) {
-            console.log("dates in save", dates);
+            console.log("notes in save", nonEmptyNotes);
             const placeData = {
                 address: address,
                 homeownerTelephone: telephoneNumber,

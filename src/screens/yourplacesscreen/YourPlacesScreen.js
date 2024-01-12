@@ -89,11 +89,12 @@ const YourPlacesScreen = () => {
                         <YourPlaceCardComp
                             key={item.id}
                             item={item}
-                            onPress={() =>
+                            onPress={() => {
+                                console.log("item in card", item);
                                 navigation.navigate("Edit Place", {
                                     unclaimedReview: item,
-                                })
-                            }
+                                });
+                            }}
                         />
                     ))
                 ) : (
