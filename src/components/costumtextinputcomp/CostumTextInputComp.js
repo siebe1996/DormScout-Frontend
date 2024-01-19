@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, TextInput, StyleSheet } from "react-native";
-import { styles } from "./CostumTextInputStyle";
+import { costumTextInputStyle } from "./CostumTextInputStyle";
 
 const CostumTextInputComp = ({
     value,
@@ -13,7 +13,7 @@ const CostumTextInputComp = ({
         <View>
             <TextInput
                 key={keyProp}
-                style={styles.input}
+                style={costumTextInputStyle.input}
                 value={value}
                 onChangeText={onChangeText}
                 placeholder={placeholder}

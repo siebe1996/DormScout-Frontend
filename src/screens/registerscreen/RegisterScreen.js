@@ -25,6 +25,7 @@ import DateTimePicker from "@react-native-community/datetimepicker";
 import { returnResultImagePicker } from "../../services/HelperFunctions";
 import { AuthContext } from "../../contexts/AuthContext";
 import InvalidTextField from "../../components/invalidtextfield/InvalidTextField";
+import { registerStyle } from "./RegisterStyle";
 
 const RegisterScreen = () => {
     const [firstName, setFirstName] = useState("");

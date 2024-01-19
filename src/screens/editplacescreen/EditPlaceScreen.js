@@ -16,7 +16,7 @@ import CostumButtonComp from "../../components/costumbuttoncomp/CostumButtonComp
 import CostumTextInputLabelComp from "../../components/costumtextinputlabelcomp/CostumTextInputLabelComp";
 import CostumLabelComp from "../../components/costumlabelcomp/CostumLabelComp";
 import CostumTextInputComp from "../../components/costumtextinputcomp/CostumTextInputComp";
-import { styles } from "./EditPlaceStyle";
+import { editPlaceStyle } from "./EditPlaceStyle";
 import reviewData from "../../data/json/review";
 import { useAuth } from "../../contexts/AuthContext";
 import { putPlace } from "../../services/ApiService";
@@ -371,7 +371,7 @@ const EditPlaceScreen = ({ route }) => {
                             <TouchableOpacity
                                 onPress={() => showDatepicker(index)}
                             >
-                                <Text style={styles.input}>
+                                <Text style={editPlaceStyle.input}>
                                     {console.log("item", item)}
                                     {item.date.toLocaleDateString()}
                                 </Text>
@@ -381,7 +381,7 @@ const EditPlaceScreen = ({ route }) => {
                             <TouchableOpacity
                                 onPress={() => showTimepicker(index)}
                             >
-                                <Text style={styles.input}>
+                                <Text style={editPlaceStyle.input}>
                                     {item.date.toLocaleTimeString()}
                                 </Text>
                             </TouchableOpacity>
@@ -393,7 +393,7 @@ const EditPlaceScreen = ({ route }) => {
                                     <TouchableOpacity
                                         onPress={() => handleRemoveDate(index)}
                                     >
-                                        <Text style={styles.remove}>
+                                        <Text style={editPlaceStyle.remove}>
                                             Remove
                                         </Text>
                                     </TouchableOpacity>
@@ -439,7 +439,7 @@ const EditPlaceScreen = ({ route }) => {
                     </View>
                 )}
                 <TouchableOpacity onPress={handleAddDate}>
-                    <Text style={styles.add}>Add Date</Text>
+                    <Text style={editPlaceStyle.add}>Add Date</Text>
                 </TouchableOpacity>
             </View>
 
@@ -462,14 +462,16 @@ const EditPlaceScreen = ({ route }) => {
                                 <TouchableOpacity
                                     onPress={() => handleRemoveNote(index)}
                                 >
-                                    <Text style={styles.remove}>Remove</Text>
+                                    <Text style={editPlaceStyle.remove}>
+                                        Remove
+                                    </Text>
                                 </TouchableOpacity>
                             </View>
                         )}
                     </View>
                 ))}
                 <TouchableOpacity onPress={handleAddNote}>
-                    <Text style={styles.add}>Add Note</Text>
+                    <Text style={editPlaceStyle.add}>Add Note</Text>
                 </TouchableOpacity>
             </View>
 

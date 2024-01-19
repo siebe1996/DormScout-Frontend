@@ -14,6 +14,7 @@ import { useNavigation, useFocusEffect } from "@react-navigation/native";
 import { useAuth } from "../../contexts/AuthContext";
 import { fetchPlacesReviewer } from "../../services/ApiService";
 import { showAlertOffline } from "../../services/HelperFunctions";
+import { yourReviewsStyle } from "./YourReviewsStyle";
 
 const YourReviewsScreen = () => {
     const { state } = useAuth();
@@ -68,8 +69,10 @@ const YourReviewsScreen = () => {
 
     return (
         <ScrollView>
-            <View>
-                <Text>Claimed not finished reviews</Text>
+            <View style={yourReviewsStyle.container}>
+                <Text style={yourReviewsStyle.title}>
+                    Claimed not finished reviews
+                </Text>
                 {claimedNotFinishedPlaces &&
                 claimedNotFinishedPlaces.length > 0 ? (
                     claimedNotFinishedPlaces.map((item) => (
@@ -87,8 +90,10 @@ const YourReviewsScreen = () => {
                     <Text>No data available</Text>
                 )}
             </View>
-            <View>
-                <Text>Claimed and finished reviews</Text>
+            <View style={yourReviewsStyle.container}>
+                <Text style={yourReviewsStyle.title}>
+                    Claimed and finished reviews
+                </Text>
                 {claimedAndFinishedPlaces &&
                 claimedAndFinishedPlaces.length > 0 ? (
                     claimedAndFinishedPlaces.map((item) => (

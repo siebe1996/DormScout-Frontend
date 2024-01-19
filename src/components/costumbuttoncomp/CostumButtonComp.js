@@ -1,14 +1,14 @@
 import React from "react";
 import { TouchableOpacity, Text, StyleSheet } from "react-native";
-import { styles } from "./CostumButtonStyle";
+import { costumButtonStyle } from "./CostumButtonStyle";
 
 const CostumButtonComp = ({ onPress, text, disabled }) => (
     <TouchableOpacity
         onPress={onPress}
-        style={styles.button}
+        style={costumButtonStyle.button}
         disabled={disabled}
     >
-        <Text style={styles.buttonText}>{text}</Text>
+        <Text style={costumButtonStyle.buttonText}>{text}</Text>
     </TouchableOpacity>
 );
 

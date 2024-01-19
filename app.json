@@ -9,7 +9,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#fffcf7"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -20,22 +20,13 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#fffcf7"
       },
       "package": "com.siebevdv.DormScout"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": [
-      [
-        "@stripe/stripe-react-native",
-        {
-          "merchantIdentifier": "string | string [] // dit werkt niet moet vervangen worden https://stripe.com/docs/apple-pay?platform=react-native",
-          "enableGooglePay": false
-        }
-      ]
-    ],
     "extra": {
       "eas": {
         "projectId": "f215e60c-2144-4c99-a740-8419710a254c"

@@ -1,11 +1,11 @@
 import React from "react";
 import { View, Text, TextInput, StyleSheet } from "react-native";
-import { styles } from "./CostumLabelStyle";
+import { costumLabelStyle } from "./CostumLabelStyle";
 
 const CostumLabelComp = ({ text }) => {
     return (
         <View>
-            <Text style={styles.label}>{text}</Text>
+            <Text style={costumLabelStyle.label}>{text}</Text>
         </View>
     );
 };

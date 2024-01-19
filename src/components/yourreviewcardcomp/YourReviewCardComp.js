@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import { useNavigation, useFocusEffect } from "@react-navigation/native";
-import { styles } from "./YourReviewCardStyle"; // Import the styles
+import { yourReviewCardStyle } from "./YourReviewCardStyle"; // Import the styles
 import { convertBase64ArrayToImages } from "../../services/HelperFunctions";
 
 const YourReviewCardComp = ({ item, onPress }) => {
@@ -23,14 +23,19 @@ const YourReviewCardComp = ({ item, onPress }) => {
     };
 
     return (
-        <View style={styles.cardContainer}>
+        <View style={yourReviewCardStyle.cardContainer}>
             <TouchableOpacity onPress={onPress}>
-                <View style={styles.imageContainer}>
-                    <Image source={{ uri: images[0] }} style={styles.image} />
+                <View style={yourReviewCardStyle.imageContainer}>
+                    <Image
+                        source={{ uri: images[0] }}
+                        style={yourReviewCardStyle.image}
+                    />
                 </View>
-                <View style={styles.textContainer}>
-                    <Text style={styles.addressText}>{item.address}</Text>
-                    <Text style={styles.dateText}>
+                <View style={yourReviewCardStyle.textContainer}>
+                    <Text style={yourReviewCardStyle.addressText}>
+                        {item.address}
+                    </Text>
+                    <Text style={yourReviewCardStyle.dateText}>
                         {new Date(item.chosenDate).toLocaleDateString()}{" "}
                         {new Date(item.chosenDate).toLocaleTimeString()}
                     </Text>

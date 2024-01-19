@@ -1,5 +1,6 @@
 import React from "react";
 import { Alert } from "react-native";
+import { confirmationStyle } from "./ConfirmationStyle";
 
 const ConfirmationPopup = ({ title, message, onCancel, onConfirm }) => {
     const showAlert = () => {

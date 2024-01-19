@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, ScrollView } from "react-native";
-import { styles } from "./ClaimedReviewStyle";
+import { claimedReviewStyle } from "./ClaimedReviewStyle";
 import CostumCarouselComp from "../../components/costumcarouselcomp/CostumCarouselComp";
 import CostumButtonComp from "../../components/costumbuttoncomp/CostumButtonComp";
 import CostumTextComp from "../../components/costumtextcomp/CostumTextComp";

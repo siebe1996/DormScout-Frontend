@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2da2bc65-9c7d-47fd-80d3-1361b7d12ad3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/eas.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/addresssearchpopup/AddressSearchPopup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/addresssearchpopup/AddressSearchPopup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/addresssearchpopup/AddressSearchStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/addresssearchpopup/AddressSearchStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/claimplacepopup/ClaimPlacePopup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/claimplacepopup/ClaimPlacePopup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/claimplacepopup/ClaimPlaceStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/claimplacepopup/ClaimPlaceStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/confirmationpopup/ConfirmationPopup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/confirmationpopup/ConfirmationPopup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/confirmationpopup/ConfirmationStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/confirmationpopup/ConfirmationStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/costumbuttoncomp/CostumButtonComp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/costumbuttoncomp/CostumButtonComp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/costumbuttoncomp/CostumButtonStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/costumbuttoncomp/CostumButtonStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/costumcarouselcomp/CostumCarouselComp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/costumcarouselcomp/CostumCarouselComp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/costumcarouselcomp/CostumCarouselStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/costumcarouselcomp/CostumCarouselStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/costumheadercomponent/CostumHeaderComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/costumheadercomponent/CostumHeaderComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/costumheadercomponent/CostumHeaderStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/costumheadercomponent/CostumHeaderStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/costumlabelcomp/CostumLabelComp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/costumlabelcomp/CostumLabelComp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/costumlabelcomp/CostumLabelStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/costumlabelcomp/CostumLabelStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/costumtextcomp/CostumTextComp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/costumtextcomp/CostumTextComp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/costumtextcomp/CostumTextStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/costumtextcomp/CostumTextStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/costumtextinputcomp/CostumTextInputComp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/costumtextinputcomp/CostumTextInputComp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/costumtextinputcomp/CostumTextInputStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/costumtextinputcomp/CostumTextInputStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/costumtextinputlabelcomp/CostumTextInputLabelComp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/costumtextinputlabelcomp/CostumTextInputLabelComp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/costumtextinputlabelcomp/CostumTextInputLabelStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/costumtextinputlabelcomp/CostumTextInputLabelStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/costumtextlabelcomp/CostumTextLabelComp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/costumtextlabelcomp/CostumTextLabelComp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/costumtextlabelcomp/CostumTextLabelStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/costumtextlabelcomp/CostumTextLabelStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/imagepopup/ImagePopup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/imagepopup/ImagePopup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/imagepopup/ImageStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/imagepopup/ImageStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/starreviewpopup/StarReviewPopup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/starreviewpopup/StarReviewPopup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/starreviewpopup/StarReviewStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/starreviewpopup/StarReviewStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/yourplacecardcomp/YourPlaceCardComp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/yourplacecardcomp/YourPlaceCardComp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/yourplacecardcomp/YourPlaceCardStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/yourplacecardcomp/YourPlaceCardStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/yourreviewcardcomp/YourReviewCardComp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/yourreviewcardcomp/YourReviewCardComp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/yourreviewcardcomp/YourReviewCardStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/yourreviewcardcomp/YourReviewCardStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/navigation/TabNavigator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigation/TabNavigator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/accountscreen/AccountScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/accountscreen/AccountScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/accountscreen/AccountStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/accountscreen/AccountStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/addplacescreen/AddPlaceScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/addplacescreen/AddPlaceScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/addplacescreen/AddPlaceScreenOld.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/addplacescreen/AddPlaceStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/addplacescreen/AddPlaceStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/camerascreen/CameraScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/camerascreen/CameraScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/camerascreen/CameraStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/camerascreen/CameraStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/claimedreviewscreen/ClaimedReviewScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/claimedreviewscreen/ClaimedReviewScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/claimedreviewscreen/ClaimedReviewStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/claimedreviewscreen/ClaimedReviewStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/claimreviewscreen/ClaimReviewScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/claimreviewscreen/ClaimReviewScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/claimreviewscreen/ClaimReviewStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/claimreviewscreen/ClaimReviewStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/editaccountscreen/EditAccountScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/editaccountscreen/EditAccountScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/editaccountscreen/EditAccountStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/editaccountscreen/EditAccountStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/editplacescreen/EditPlaceScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/editplacescreen/EditPlaceScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/editplacescreen/EditPlaceStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/editplacescreen/EditPlaceStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/homescreen/HomeScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/homescreen/HomeScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/homescreen/HomeStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/homescreen/HomeStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/loginscreen/LoginScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/loginscreen/LoginScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/loginscreen/LoginStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/loginscreen/LoginStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/registerscreen/RegisterScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/registerscreen/RegisterScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/registerscreen/RegisterStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/registerscreen/RegisterStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/reviewscreen/ReviewScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/reviewscreen/ReviewScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/reviewscreen/ReviewStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/reviewscreen/ReviewStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/yourplacesscreen/YourPlacesScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/yourplacesscreen/YourPlacesScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/yourplacesscreen/YourPlacesStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/yourplacesscreen/YourPlacesStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/yourreviewsscreen/YourReviewsScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/yourreviewsscreen/YourReviewsScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/yourreviewsscreen/YourReviewsStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/yourreviewsscreen/YourReviewsStyle.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2aqvDe8URecpoy17qTMdBIYPQDe" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "cidr.known.project.marker": "true",
+    "last_opened_file_path": "C:/Users/siebe/Documents/odisee/3dejaar/Mobile application development/project/DormScout",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.general",
+    "structure.view.defaults.are.configured": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2da2bc65-9c7d-47fd-80d3-1361b7d12ad3" name="Changes" comment="" />
+      <created>1705058805772</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1705058805772</updated>
+    </task>
+    <servers />
+  </component>
+</project>

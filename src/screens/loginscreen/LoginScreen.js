@@ -7,8 +7,9 @@ import {
     StyleSheet,
     TouchableOpacity,
     ActivityIndicator,
+    Image,
 } from "react-native";
-import { LoginStyle } from "./LoginStyle";
+import { loginStyle } from "./LoginStyle";
 import { AuthContext } from "../../contexts/AuthContext";
 import { useNavigation } from "@react-navigation/native";
 import CostumButtonComp from "../../components/costumbuttoncomp/CostumButtonComp";
@@ -55,16 +56,19 @@ const LoginScreen = () => {
     };
 
     return (
-        <View style={LoginStyle.container}>
-            <Text style={LoginStyle.header}>Login</Text>
+        <View style={loginStyle.container}>
+            <Image
+                source={require("../../data/images/logo.png")}
+                style={loginStyle.image}
+            />
             <TextInput
-                style={LoginStyle.input}
+                style={loginStyle.input}
                 placeholder="Email"
                 value={email}
                 onChangeText={setEmail}
             />
             <TextInput
-                style={LoginStyle.input}
+                style={loginStyle.input}
                 placeholder="Password"
                 secureTextEntry={true}
                 value={password}
@@ -77,9 +81,8 @@ const LoginScreen = () => {
             />
 
             <View>
-                <Text>or register</Text>
                 <TouchableOpacity onPress={handleRegisterPress}>
-                    <Text> here</Text>
+                    <Text style={loginStyle.register}>or register here</Text>
                 </TouchableOpacity>
             </View>
             {loading && <ActivityIndicator size="large" color="#0000ff" />}

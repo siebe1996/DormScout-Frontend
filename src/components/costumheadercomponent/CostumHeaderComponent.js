@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text } from "react-native";
+import { costumHeaderStyle } from "./CostumHeaderStyle";
 
 const CostumHeaderComponent = ({ title, subtitle }) => {
     return (

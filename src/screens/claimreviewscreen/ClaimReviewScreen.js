@@ -11,6 +11,7 @@ import { putPlace } from "../../services/ApiService";
 import { useAuth } from "../../contexts/AuthContext";
 import { getStorageItemAsync } from "../../services/LocalStorageService";
 import { convertBase64ArrayToImages } from "../../services/HelperFunctions";
+import { claimReviewStyle } from "./ClaimReviewStyle";
 
 const ClaimReviewScreen = ({ route }) => {
     const { state } = useAuth();
@@ -93,7 +94,11 @@ const ClaimReviewScreen = ({ route }) => {
                     {dates.map((date) => (
                         <Picker.Item
                             key={date.id}
-                            label={date.date}
+                            label={
+                                new Date(date.date).toLocaleDateString() +
+                                " " +
+                                new Date(date.date).toLocaleTimeString()
+                            }
                             value={date.date}
                         />
                     ))}

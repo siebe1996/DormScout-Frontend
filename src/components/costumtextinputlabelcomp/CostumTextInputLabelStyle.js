@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-export const styles = StyleSheet.create({
+export const costumTextInputLabelStyle = StyleSheet.create({
     container: {
         marginBottom: 16,
     },

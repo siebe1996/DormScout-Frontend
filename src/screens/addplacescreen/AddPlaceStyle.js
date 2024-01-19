@@ -1,15 +1,22 @@
 // AddPlaceStyle.js
 import { StyleSheet } from "react-native";
 
-export const styles = StyleSheet.create({
+export const addPlaceStyle = StyleSheet.create({
+    container: {
+        alignItems: "center",
+    },
     input: {
         height: 40,
         borderColor: "gray",
         borderWidth: 1,
         marginBottom: 16,
     },
-    add: { color: "blue" },
-    remove: { color: "blue" },
+    add: {
+        color: "blue",
+        fontSize: 16,
+        marginVertical: 15,
+    },
+    remove: { color: "blue", fontSize: 12, marginVertical: 15 },
     modalContainer: {
         flex: 1,
         justifyContent: "flex-end",

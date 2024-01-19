@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-export const styles = StyleSheet.create({
+export const addressSearchStyle = StyleSheet.create({
     modalContainer: {
         flex: 1,
         justifyContent: "center",
@@ -9,10 +9,10 @@ export const styles = StyleSheet.create({
     },
     searchBar: {
         height: 40,
-        width: "80%",
+        width: "90%",
         borderColor: "gray",
         borderWidth: 1,
-        marginBottom: 10,
+        marginBottom: 15,
         paddingHorizontal: 10,
         backgroundColor: "white",
         borderRadius: 5,

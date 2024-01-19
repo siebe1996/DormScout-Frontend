@@ -1,23 +1,32 @@
 import { StyleSheet } from "react-native";
 
-export const LoginStyle = StyleSheet.create({
+export const loginStyle = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: "#a1b5d8",
         justifyContent: "center",
         alignItems: "center",
         padding: 16,
     },
     header: {
-        fontSize: 24,
-        fontWeight: "bold",
+        fontSize: 36,
         marginBottom: 16,
     },
     input: {
         width: "100%",
-        height: 40,
-        borderWidth: 1,
-        borderColor: "gray",
+        height: 50,
+        borderWidth: 0,
         marginBottom: 16,
-        padding: 8,
+        padding: 10,
+        backgroundColor: "white",
+        borderRadius: 3,
+    },
+    register: {
+        textDecorationLine: "underline",
+    },
+    image: {
+        width: 200,
+        height: 200,
+        resizeMode: "cover",
     },
 });

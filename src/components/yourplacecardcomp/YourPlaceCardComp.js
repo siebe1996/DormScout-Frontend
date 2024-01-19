@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import { useNavigation, useFocusEffect } from "@react-navigation/native";
-import { styles } from "./YourPlaceCardStyle";
+import { yourPlaceCardStyle } from "./YourPlaceCardStyle";
 import { convertBase64ArrayToImages } from "../../services/HelperFunctions";
 
 const YourPlaceCardComp = ({ item, onPress }) => {
@@ -23,17 +23,25 @@ const YourPlaceCardComp = ({ item, onPress }) => {
     };
 
     return (
-        <View style={styles.cardContainer}>
+        <View style={yourPlaceCardStyle.cardContainer}>
             <TouchableOpacity onPress={onPress}>
-                <View style={styles.imageContainer}>
-                    <Image source={{ uri: images[0] }} style={styles.image} />
+                <View style={yourPlaceCardStyle.imageContainer}>
+                    <Image
+                        source={{ uri: images[0] }}
+                        style={yourPlaceCardStyle.image}
+                    />
                 </View>
 
-                <View style={styles.textContainer}>
-                    <Text style={styles.addressText}>{item.address}</Text>
+                <View style={yourPlaceCardStyle.textContainer}>
+                    <Text style={yourPlaceCardStyle.addressText}>
+                        {item.address}
+                    </Text>
                     {item.dates &&
                         item.dates.map((date, index) => (
-                            <Text key={index} style={styles.dateText}>
+                            <Text
+                                key={index}
+                                style={yourPlaceCardStyle.dateText}
+                            >
                                 {new Date(date.date).toLocaleDateString()}{" "}
                                 {new Date(date.date).toLocaleTimeString()}
                             </Text>

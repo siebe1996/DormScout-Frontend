@@ -21,15 +21,13 @@ const TabNavigator = () => {
     return (
         <Tab.Navigator
             screenOptions={{
-                tabBarActiveTintColor: "blue",
-                tabBarInactiveTintColor: "gray",
+                tabBarActiveTintColor: "#a1b5d8",
+                tabBarInactiveTintColor: "lightgrey",
                 tabBarLabelStyle: {
-                    fontSize: 14,
+                    fontSize: 11,
                 },
                 tabBarStyle: {
                     backgroundColor: "white",
-                    borderTopWidth: 1,
-                    borderTopColor: "lightgray",
                 },
             }}
         >

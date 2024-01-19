@@ -7,7 +7,7 @@ import {
     StyleSheet,
     Image,
 } from "react-native";
-import { styles } from "./ClaimPlaceStyle";
+import { claimPlaceStyle } from "./ClaimPlaceStyle";
 import { Ionicons } from "@expo/vector-icons";
 import CostumButtonComp from "../costumbuttoncomp/CostumButtonComp";
 import { useNavigation } from "@react-navigation/native";
@@ -48,28 +48,35 @@ const ClaimPlacePopup = ({ place, isVisible, onClose }) => {
             visible={isVisible}
             onRequestClose={onClose}
         >
-            <View style={styles.modalContainer}>
-                <View style={styles.modalContent}>
+            <View style={claimPlaceStyle.modalContainer}>
+                <View style={claimPlaceStyle.modalContent}>
                     {images && images.length > 0 && (
                         <Image
-                            style={styles.image}
+                            style={claimPlaceStyle.image}
                             source={{
                                 uri: images[0].imageData,
                             }}
                         />
                     )}
                     <TouchableOpacity
-                        style={styles.closeButton}
+                        style={claimPlaceStyle.closeButton}
                         onPress={onClose}
                     >
                         <Ionicons name="ios-close" size={30} color="white" />
                     </TouchableOpacity>
-                    <Text style={styles.modalTitle}>Claim Place</Text>
-                    <Text style={styles.addressText}>Address: {address}</Text>
-                    <Text style={styles.datesTitle}>Possible Dates:</Text>
+                    <Text style={claimPlaceStyle.modalTitle}>Claim Place</Text>
+                    <Text style={claimPlaceStyle.addressText}>
+                        Address: {address}
+                    </Text>
+                    <Text style={claimPlaceStyle.datesTitle}>
+                        Possible Dates:
+                    </Text>
                     {dates.map((date, index) => (
-                        <Text key={index} style={styles.dateText}>
-                            - {date.date}
+                        <Text key={index} style={claimPlaceStyle.dateText}>
+                            -{" "}
+                            {new Date(date.date).toLocaleDateString() +
+                                " " +
+                                new Date(date.date).toLocaleTimeString()}
                         </Text>
                     ))}
                     <CostumButtonComp

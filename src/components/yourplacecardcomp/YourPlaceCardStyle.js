@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-export const styles = StyleSheet.create({
+export const yourPlaceCardStyle = StyleSheet.create({
     cardContainer: {
         flexDirection: "row", // Use flexDirection to align items horizontally
         alignItems: "center", // Center items vertically

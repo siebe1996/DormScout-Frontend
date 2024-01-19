@@ -14,7 +14,7 @@ import CostumTextLabelComp from "../../components/costumtextlabelcomp/CostumText
 import CostumLabelComp from "../../components/costumlabelcomp/CostumLabelComp";
 import CostumTextComp from "../../components/costumtextcomp/CostumTextComp";
 import StarReviewPopup from "../../components/starreviewpopup/StarReviewPopup";
-import { styles } from "./ReviewStyle";
+import { reviewStyle } from "./ReviewStyle";
 import reviewData from "../../data/json/review";
 import {
     fetchReview,

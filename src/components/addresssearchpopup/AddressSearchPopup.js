@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { View, TextInput, Button, Modal, FlatList } from "react-native";
-import { styles } from "./AddressSearchStyle";
+import { addressSearchStyle } from "./AddressSearchStyle";
 import axios from "axios";
 import { fetchPredictions } from "../../services/ApiService";
 import { fetchPlaceDetails } from "../../services/ApiService";
+import CostumButtonComp from "../../components/costumbuttoncomp/CostumButtonComp";
 
 const AddressSearchPopup = ({ isVisible, onClose, changeLocation }) => {
     const [searchText, setSearchText] = useState("");
@@ -43,9 +44,9 @@ const AddressSearchPopup = ({ isVisible, onClose, changeLocation }) => {
             visible={isVisible}
             onRequestClose={onClose}
         >
-            <View style={styles.modalContainer}>
+            <View style={addressSearchStyle.modalContainer}>
                 <TextInput
-                    style={styles.searchBar}
+                    style={addressSearchStyle.searchBar}
                     placeholder="Enter address, country, or place"
                     value={searchText}
                     onChangeText={(text) => setSearchText(text)}
@@ -62,8 +63,8 @@ const AddressSearchPopup = ({ isVisible, onClose, changeLocation }) => {
                         )}
                     />
                 )}
-                <Button
-                    title="Cancel"
+                <CostumButtonComp
+                    text="Cancel"
                     onPress={() => {
                         setPredictions([]);
                         onClose();

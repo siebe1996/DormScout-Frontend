@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity } from "react-native";
 import { useNavigation, useFocusEffect } from "@react-navigation/native";
 import MapView, { Marker } from "react-native-maps";
 import * as Location from "expo-location";
-import { HomeStyles } from "./HomeStyle";
+import { homeStyle } from "./HomeStyle";
 import AddressSearchPopup from "../../components/addresssearchpopup/AddressSearchPopup";
 import reviewData from "../../data/json/review";
 import ClaimPlacePopup from "../../components/claimplacepopup/ClaimPlacePopup";
@@ -151,16 +151,16 @@ const HomeScreen = () => {
 
     if (loading) {
         return (
-            <View style={HomeStyles.container}>
+            <View style={homeStyle.container}>
                 <Text>Loading...</Text>
             </View>
         );
     }
 
     return (
-        <View style={HomeStyles.container}>
+        <View style={homeStyle.container}>
             <MapView
-                style={HomeStyles.map}
+                style={homeStyle.map}
                 initialRegion={region}
                 showsUserLocation={true}
             >
@@ -184,7 +184,8 @@ const HomeScreen = () => {
             </MapView>
 
             <TouchableOpacity onPress={openSearchbar}>
-                <Text style={HomeStyles.city}>City: {locationCity}</Text>
+                <Text style={homeStyle.city}>City: {locationCity}</Text>
+                <Text style={homeStyle.city2}>(Tap to search)</Text>
             </TouchableOpacity>
 
             <AddressSearchPopup

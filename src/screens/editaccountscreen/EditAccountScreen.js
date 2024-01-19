@@ -19,7 +19,7 @@ import {
     getStorageItemAsync,
     setStorageItemAsync,
 } from "../../services/LocalStorageService";
-import { styles } from "./EditAccountStyle";
+import { editAccountStyle } from "./EditAccountStyle";
 import { putUser, fetchUser, fetchUserMe } from "../../services/ApiService";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import { useNavigation, useFocusEffect } from "@react-navigation/native";
@@ -163,7 +163,7 @@ const EditAccountScreen = ({ route }) => {
     };
 
     return (
-        <ScrollView style={{ padding: 16 }}>
+        <View style={editAccountStyle.container}>
             {selectedImage ? (
                 <TouchableOpacity onPress={() => openImagePicker()}>
                     <Image
@@ -191,7 +191,7 @@ const EditAccountScreen = ({ route }) => {
                     <CostumLabelComp text="Birthday:" />
                     <View>
                         <TouchableOpacity onPress={() => showDatepicker()}>
-                            <Text style={styles.input}>
+                            <Text style={editAccountStyle.input}>
                                 {new Date(date).toLocaleDateString()}
                             </Text>
                         </TouchableOpacity>
@@ -220,7 +220,7 @@ const EditAccountScreen = ({ route }) => {
                 text="Edit"
                 disabled={loading}
             />
-        </ScrollView>
+        </View>
     );
 };
 

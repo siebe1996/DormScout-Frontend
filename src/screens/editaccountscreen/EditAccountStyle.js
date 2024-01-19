@@ -1,6 +1,11 @@
 import { StyleSheet } from "react-native";
 
-export const styles = StyleSheet.create({
+export const editAccountStyle = StyleSheet.create({
+    container: {
+        padding: 16,
+        flex: 1,
+        alignItems: "center",
+    },
     input: {
         height: 40,
         borderColor: "gray",

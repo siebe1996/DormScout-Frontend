@@ -11,7 +11,7 @@ import {
 import YourPlaceCardComp from "../../components/yourplacecardcomp/YourPlaceCardComp";
 import YourReviewCardComp from "../../components/yourreviewcardcomp/YourReviewCardComp";
 import reviewData from "../../data/json/review";
-import { styles } from "./YourPlacesStyle"; // Import or define your styles
+import { yourPlacesStyle } from "./YourPlacesStyle"; // Import or define your styles
 import CostumButtonComp from "../../components/costumbuttoncomp/CostumButtonComp";
 import { useNavigation, useFocusEffect } from "@react-navigation/native";
 import { fetchPlacesYours } from "../../services/ApiService";
@@ -81,9 +81,9 @@ const YourPlacesScreen = () => {
     }
 
     return (
-        <ScrollView style={styles.container}>
-            <View style={styles.listContainer}>
-                <Text>Unclaimed reviews</Text>
+        <ScrollView style={yourPlacesStyle.container}>
+            <View style={yourPlacesStyle.listContainer}>
+                <Text style={yourPlacesStyle.title}>Unclaimed reviews</Text>
                 {unClaimedReviews && unClaimedReviews.length > 0 ? (
                     unClaimedReviews.map((item) => (
                         <YourPlaceCardComp
@@ -101,8 +101,10 @@ const YourPlacesScreen = () => {
                     <Text>No data available</Text>
                 )}
             </View>
-            <View style={styles.listContainer}>
-                <Text>Claimed not finished reviews</Text>
+            <View style={yourPlacesStyle.listContainer}>
+                <Text style={yourPlacesStyle.title}>
+                    Claimed not finished reviews
+                </Text>
                 {claimedNotFinishedReviews &&
                 claimedNotFinishedReviews.length > 0 ? (
                     claimedNotFinishedReviews.map((item) => (
@@ -116,8 +118,10 @@ const YourPlacesScreen = () => {
                     <Text>No data available</Text>
                 )}
             </View>
-            <View style={styles.listContainer}>
-                <Text>Claimed and finished reviews</Text>
+            <View style={yourPlacesStyle.listContainer}>
+                <Text style={yourPlacesStyle.title}>
+                    Claimed and finished reviews
+                </Text>
                 {claimedAndFinishedReviews &&
                 claimedAndFinishedReviews.length > 0 ? (
                     claimedAndFinishedReviews.map((item) => (
@@ -150,12 +154,14 @@ const YourPlacesScreen = () => {
                 )}
             </View>*/}
 
-            <CostumButtonComp
-                onPress={() => {
-                    navigation.navigate("Add Place");
-                }}
-                text="add place"
-            />
+            <View style={yourPlacesStyle.button}>
+                <CostumButtonComp
+                    onPress={() => {
+                        navigation.navigate("Add Place");
+                    }}
+                    text="add place"
+                />
+            </View>
         </ScrollView>
     );
 };

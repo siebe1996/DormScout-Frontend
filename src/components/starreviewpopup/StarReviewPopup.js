@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity, Modal, StyleSheet } from "react-native";
 import { Rating } from "react-native-ratings";
-import { styles } from "./StarReviewStyle";
+import { starReviewStyle } from "./StarReviewStyle";
 
 const StarReviewPopup = ({ isVisible, onClose, onSubmit }) => {
     const [rating, setRating] = useState(0);
@@ -28,9 +28,9 @@ const StarReviewPopup = ({ isVisible, onClose, onSubmit }) => {
             visible={isVisible}
             onRequestClose={handleCancel}
         >
-            <View style={styles.modalContainer}>
-                <View style={styles.modalContent}>
-                    <Text style={styles.title}>Rate this review</Text>
+            <View style={starReviewStyle.modalContainer}>
+                <View style={starReviewStyle.modalContent}>
+                    <Text style={starReviewStyle.title}>Rate this review</Text>
 
                     <Rating
                         type="star"
@@ -41,18 +41,22 @@ const StarReviewPopup = ({ isVisible, onClose, onSubmit }) => {
                         showRating
                     />
 
-                    <View style={styles.buttonContainer}>
+                    <View style={starReviewStyle.buttonContainer}>
                         <TouchableOpacity
                             onPress={handleCancel}
-                            style={styles.button}
+                            style={starReviewStyle.button}
                         >
-                            <Text style={styles.buttonText}>Cancel</Text>
+                            <Text style={starReviewStyle.buttonText}>
+                                Cancel
+                            </Text>
                         </TouchableOpacity>
                         <TouchableOpacity
                             onPress={handleConfirm}
-                            style={styles.button}
+                            style={starReviewStyle.button}
                         >
-                            <Text style={styles.buttonText}>Confirm</Text>
+                            <Text style={starReviewStyle.buttonText}>
+                                Confirm
+                            </Text>
                         </TouchableOpacity>
                     </View>
                 </View>

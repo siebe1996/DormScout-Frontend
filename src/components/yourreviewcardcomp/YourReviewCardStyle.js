@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-export const styles = StyleSheet.create({
+export const yourReviewCardStyle = StyleSheet.create({
     cardContainer: {
         flexDirection: "row", // Use flexDirection to align items horizontally
         alignItems: "center", // Center items vertically
@@ -12,6 +12,7 @@ export const styles = StyleSheet.create({
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.2,
         elevation: 2,
+        marginHorizontal: 16,
     },
     imageContainer: {
         marginRight: 16, // Add margin to separate the image from text

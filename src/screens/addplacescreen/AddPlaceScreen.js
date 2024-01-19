@@ -18,7 +18,7 @@ import CostumButtonComp from "../../components/costumbuttoncomp/CostumButtonComp
 import CostumTextInputLabelComp from "../../components/costumtextinputlabelcomp/CostumTextInputLabelComp";
 import CostumLabelComp from "../../components/costumlabelcomp/CostumLabelComp";
 import CostumTextInputComp from "../../components/costumtextinputcomp/CostumTextInputComp";
-import { styles } from "./AddPlaceStyle";
+import { addPlaceStyle } from "./AddPlaceStyle";
 import { fetchPredictions } from "../../services/ApiService";
 import { fetchPlaceDetails } from "../../services/ApiService";
 import { postPlace } from "../../services/ApiService";
@@ -248,10 +248,13 @@ const AddPlaceScreen = () => {
 
     return (
         <ScrollView style={{ padding: 16 }}>
-            <CostumButtonComp
-                onPress={() => openImagePicker()}
-                text="upload picture"
-            />
+            <View style={addPlaceStyle.container}>
+                <CostumButtonComp
+                    onPress={() => openImagePicker()}
+                    text="upload picture"
+                />
+            </View>
+
             <FlatList
                 data={selectedImages}
                 keyExtractor={(item) => item}
@@ -327,7 +330,7 @@ const AddPlaceScreen = () => {
                             <TouchableOpacity
                                 onPress={() => showDatepicker(index)}
                             >
-                                <Text style={styles.input}>
+                                <Text style={addPlaceStyle.input}>
                                     {new Date(item).toLocaleDateString()}
                                 </Text>
                             </TouchableOpacity>
@@ -336,7 +339,7 @@ const AddPlaceScreen = () => {
                             <TouchableOpacity
                                 onPress={() => showTimepicker(index)}
                             >
-                                <Text style={styles.input}>
+                                <Text style={addPlaceStyle.input}>
                                     {new Date(item).toLocaleTimeString()}
                                 </Text>
                             </TouchableOpacity>
@@ -348,7 +351,7 @@ const AddPlaceScreen = () => {
                                     <TouchableOpacity
                                         onPress={() => handleRemoveDate(index)}
                                     >
-                                        <Text style={styles.remove}>
+                                        <Text style={addPlaceStyle.remove}>
                                             Remove
                                         </Text>
                                     </TouchableOpacity>
@@ -394,7 +397,7 @@ const AddPlaceScreen = () => {
                     </View>
                 )}
                 <TouchableOpacity onPress={handleAddDate}>
-                    <Text style={styles.add}>Add Date</Text>
+                    <Text style={addPlaceStyle.add}>Add Date</Text>
                 </TouchableOpacity>
             </View>
 
@@ -416,17 +419,26 @@ const AddPlaceScreen = () => {
                                 <TouchableOpacity
                                     onPress={() => handleRemoveNote(index)}
                                 >
-                                    <Text style={styles.remove}>Remove</Text>
+                                    <Text style={addPlaceStyle.remove}>
+                                        Remove
+                                    </Text>
                                 </TouchableOpacity>
                             </View>
                         )}
                     </View>
                 ))}
                 <TouchableOpacity onPress={handleAddNote}>
-                    <Text style={styles.add}>Add Note</Text>
+                    <Text style={addPlaceStyle.add}>Add Note</Text>
                 </TouchableOpacity>
             </View>
-            <CostumButtonComp onPress={save} text="Submit" disabled={loading} />
+            <View style={addPlaceStyle.container}>
+                <CostumButtonComp
+                    onPress={save}
+                    text="Submit"
+                    disabled={loading}
+                />
+            </View>
+
             {loading && <ActivityIndicator size="large" color="#0000ff" />}
 
             <ImagePopup

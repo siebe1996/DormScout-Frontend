@@ -11,6 +11,8 @@ import {
     convertImageToBase64,
 } from "../../services/HelperFunctions";
 import ConfirmationPopup from "../../components/confirmationpopup/ConfirmationPopup";
+import { accountStyle } from "./AccountStyle";
+import { Ionicons } from "@expo/vector-icons";
 
 const AccountScreen = ({ route }) => {
     const { state } = useAuth();
@@ -142,21 +144,27 @@ const AccountScreen = ({ route }) => {
     };
 
     return (
-        <View>
+        <View style={accountStyle.container}>
             <Image
                 source={{
                     uri: selectedImage
                         ? selectedImage
                         : "../../data/images/anonymous-person.jpg",
                 }}
-                style={{ width: 100, height: 100, margin: 5 }}
+                style={accountStyle.image}
             />
-            <View>
-                <Text>{user.userName}</Text>
-                <Text>
-                    {user.firstName} {user.lastName}
-                </Text>
-                <Text>{user.email}</Text>
+            <View style={accountStyle.inline}>
+                <View style={accountStyle.iconStyle}>
+                    <Ionicons name="ios-person" size={30} color={"#a1b5d8"} />
+                    <Text style={accountStyle.text}>{user.userName}</Text>
+                </View>
+                <View style={accountStyle.iconStyle}>
+                    <Ionicons name="ios-mail" size={30} color={"#a1b5d8"} />
+                    <Text style={accountStyle.text}>{user.email}</Text>
+                </View>
+                {/*<Text style={accountStyle.otherText}>
+                    First name: {user.firstName} Last name: {user.lastName}
+                </Text>*/}
             </View>
             {/*<CostumButtonComp
                 onPress={handleResetPassword}
@@ -164,10 +172,10 @@ const AccountScreen = ({ route }) => {
             />*/}
             <CostumButtonComp
                 onPress={navigateToEditAccount}
-                text="edit account"
+                text="Edit profile"
             />
 
-            <View style={{ backgroundColor: "white" }}>
+            <View style={{ backgroundColor: "white", marginBottom: 20 }}>
                 <Rating
                     type="star"
                     ratingCount={5}

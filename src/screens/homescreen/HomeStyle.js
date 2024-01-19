@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-export const HomeStyles = StyleSheet.create({
+export const homeStyle = StyleSheet.create({
     container: {
         flex: 1,
     },
@@ -9,7 +9,12 @@ export const HomeStyles = StyleSheet.create({
     },
     city: {
         textAlign: "center",
-        padding: 10,
-        backgroundColor: "white",
+        fontWeight: "bold",
+        fontSize: 18,
+        paddingTop: 15,
+    },
+    city2: {
+        textAlign: "center",
+        paddingBottom: 15,
     },
 });

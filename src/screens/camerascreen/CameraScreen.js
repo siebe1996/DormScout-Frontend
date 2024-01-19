@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, Button, StyleSheet } from "react-native";
 import { Camera } from "expo-camera";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
-import { styles } from "./CameraStyle";
+import { cameraStyle } from "./CameraStyle";
 
 const CameraScreen = () => {
     const navigation = useNavigation();

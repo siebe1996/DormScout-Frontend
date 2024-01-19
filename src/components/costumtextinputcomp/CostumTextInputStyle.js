@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-export const styles = StyleSheet.create({
+export const costumTextInputStyle = StyleSheet.create({
     input: {
         height: 40,
         borderColor: "gray",
