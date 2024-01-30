@@ -50,6 +50,7 @@ const WriteReviewScreen = ({ route }) => {
             claimedReview.coordinate.latitude,
             claimedReview.coordinate.longitude
         );
+        console.log("distance", distance);
         if (distance < 0.1) {
             save();
         } else {
@@ -138,6 +139,10 @@ const WriteReviewScreen = ({ route }) => {
         return newErrors;
     };
 
+    const navigateToCamera = () => {
+        navigation.navigate("Camera", { claimedReview, photoData });
+    };
+
     const showAlert = () => {
         Alert.alert(
             "Cannot write review",
@@ -189,7 +194,7 @@ const WriteReviewScreen = ({ route }) => {
         <ScrollView>
             <View>
                 <CostumButtonComp
-                    onPress={() => navigation.navigate("Camera", {})}
+                    onPress={navigateToCamera}
                     text="take picture"
                 />
                 <CostumButtonComp

@@ -189,7 +189,7 @@ const AccountScreen = ({ route }) => {
                 />
             </View>
             <CostumButtonComp onPress={handleSignOut} text="logout" />
-            <CostumButtonComp onPress={navigateToTestStripe} text="Test" />
+            {/*<CostumButtonComp onPress={navigateToTestStripe} text="Test" />*/}
             {showChoice && (
                 <ConfirmationPopup
                     title="Confirmation"

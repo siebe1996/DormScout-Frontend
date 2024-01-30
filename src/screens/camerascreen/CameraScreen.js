@@ -5,7 +5,8 @@ import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { cameraStyle } from "./CameraStyle";
 
-const CameraScreen = () => {
+const CameraScreen = ({ route }) => {
+    const { claimedReview } = route.params;
     const navigation = useNavigation();
     const [hasPermission, setHasPermission] = Camera.useCameraPermissions();
     const [cameraRef, setCameraRef] = useState(null);
@@ -16,7 +17,7 @@ const CameraScreen = () => {
 
     if (!hasPermission.granted) {
         return (
-            <View style={styles.container}>
+            <View style={cameraStyle.container}>
                 <Text style={{ textAlign: "center" }}>
                     We need your permission to show the camera
                 </Text>
@@ -30,7 +31,10 @@ const CameraScreen = () => {
             const photo = await cameraRef.takePictureAsync();
             // Handle the taken photo (e.g., display it, save it, etc.)
             console.log("Photo taken:", photo);
-            navigation.navigate("Write Review", { photoData: photo });
+            navigation.navigate("Write Review", {
+                claimedReview,
+                photoData: photo,
+            });
         }
     };
 
@@ -41,10 +45,10 @@ const CameraScreen = () => {
                 type={Camera.Constants.Type.back}
                 ref={(ref) => setCameraRef(ref)}
             >
-                <View style={styles.cameraControls}>
+                <View style={cameraStyle.cameraControls}>
                     <TouchableOpacity
                         onPress={takePicture}
-                        style={styles.captureButton}
+                        style={cameraStyle.captureButton}
                     >
                         <Ionicons
                             name="ios-radio-button-on"
